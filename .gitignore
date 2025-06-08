@@ -1,0 +1,68 @@
+## 编译输出
+bin/
+obj/
+[Ll]og/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider / JetBrains IDE
+.idea/
+
+## Visual Studio
+.vscode/
+.vs/
+
+## 运行时文件
+*.db
+*.db-shm
+*.db-wal
+
+## ASP.NET Core 临时文件
+wwwroot/lib/
+wwwroot/node_modules/
+
+## NuGet 包
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+
+## 配置类文件（用户个人设置）
+*.csproj.user
+
+## 发布输出
+publish/
+out/
+
+## 文件系统垃圾
+Thumbs.db
+Desktop.ini
+
+## 测试结果
+TestResults/
+*.coverage
+*.coveragexml
+
+## 临时文件
+*.tmp
+*.bak
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+## StyleCop
+StyleCopReport.xml
+
+## DotCover
+*.dotCover
+
+## Mac 系统
+.DS_Store
+
+## Windows 系统
+ehthumbs.db
