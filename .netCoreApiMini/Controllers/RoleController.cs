@@ -1,3 +1,4 @@
+using _netCoreApiMini.IService;
 using _netCoreApiMini.Model;
 using _netCoreApiMini.Service;
 using AutoMapper;
@@ -9,19 +10,17 @@ namespace _netCoreApiMini.Controllers
     [ApiController]
     public class RoleController : ControllerBase
     {
-        private readonly IMapper _mapper;
+        private readonly IBaseService<Role, RoleVo> _roleService;
 
-
-        public RoleController(IMapper mapper)
+        public RoleController(IMapper mapper, IBaseService<Role, RoleVo> baseService)
         {
-            _mapper = mapper;
+            _roleService = baseService;
         }
 
         [HttpGet("list")]
         public async Task<List<RoleVo>> QueryList()
         {
-            var roleService = new BaseService<Role, RoleVo>(_mapper);
-            return await roleService.Query();
+            return await _roleService.Query();
         }
     }
 }

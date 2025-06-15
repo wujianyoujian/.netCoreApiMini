@@ -1,4 +1,7 @@
 using _netCoreApiMini.Extensions;
+using _netCoreApiMini.IService;
+using _netCoreApiMini.Repository;
+using _netCoreApiMini.Service;
 
 public class Program
 {
@@ -16,6 +19,10 @@ public class Program
         // 通过扩展方法的形式增加 model <=> vo 转换 
         builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
         AutoMapperConfig.RegisterMappings();
+
+        // 依赖注入
+        builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+        builder.Services.AddScoped(typeof(IBaseService<,>), typeof(BaseService<,>));
 
         var app = builder.Build();
 
